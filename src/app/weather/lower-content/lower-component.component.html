@@ -1,13 +1,16 @@
 <div class="row">
-  <div class="col-2 weather-down">
-    <div class="week-day">
-      <p>mon</p>
+  <div class="col-2 weather-down" *ngFor="let item of this.weather.daily.data,let i=index">
+    <div *ngIf="i<6">
+      <div class="week-day">
+        <p>mon</p>
+      </div>
+      <div class="weather-image">
+        <img style="width: 100%;" src="./assets/{{item.icon}}.svg" alt="">
+      </div>
+      <div class="current-weather">
+          <p>{{fromFaranheihtToCelcius(apparentTemperature(item.temperatureMin,item.temperatureMax))}}</p>
+      </div>
     </div>
-    <div class="weather-image">
-      <img style="width: 100%;" src="./assets/clear-day.svg" alt="">
-    </div>
-    <div class="current-weather">
-        <p>25</p>
-    </div>
+   
   </div>
 </div>

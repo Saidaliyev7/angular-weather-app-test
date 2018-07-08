@@ -12,8 +12,16 @@ export class LowerComponent implements OnInit {
     weather: WeatherInterface
     constructor(private _wheatherService: WeatherService) { }
 
-    ngOnInit(): void { }
-
+    ngOnInit(): void {
+        this.returnCurrentPosition()
+     }
+     fromFaranheihtToCelcius(faranheit) {
+        var celcius = (faranheit - 32) * 5 / 9;
+        return Math.round(celcius);
+    }
+     apparentTemperature(maxTemp,minTemp) {
+         return (maxTemp+minTemp)/2
+     }
     weatherInformation(lat, long) {
         // console.log("Sakam")
         this._wheatherService.getWheatherInfortation(lat, long).subscribe(response => {
