@@ -4,7 +4,10 @@
   justify-content: space-between;
   .city-name {
     color: white;
-    font-size: 22px;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+
   }
   .city-temprature {
     color: white;
@@ -36,6 +39,7 @@
 }
 
 .weather-icon {
+  text-align: center;
   img {
     width: 100%;
     height: 100%;
@@ -49,6 +53,7 @@
 .now-weather {
   font-size: 120px;
   text-align: center;
+  font-weight: bold;
   color: white;
   p {
       position: relative;

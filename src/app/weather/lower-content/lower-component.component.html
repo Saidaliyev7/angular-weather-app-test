@@ -2,7 +2,7 @@
   <div class="col-2 weather-down" *ngFor="let item of this.weather.daily.data,let i=index">
     <div *ngIf="i<6">
       <div class="week-day">
-        <p>mon</p>
+        <p>{{weekDate(i)}}</p>
       </div>
       <div class="weather-image">
         <img style="width: 100%;" src="./assets/{{item.icon}}.svg" alt="">

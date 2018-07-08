@@ -10,12 +10,40 @@ import { WeatherInterface } from './interface/weather.interface';
 })
 export class UpperContentComponent implements OnInit {
     geolocationPosition: any;
-    weather: WeatherInterface
+    weather: WeatherInterface;
+    today:string;
     constructor(private _wheatherService: WeatherService) { }
 
     ngOnInit(): void {
         this.returnCurrentPosition()
+        this.today= this.formatDate(new Date())
+        
+        
     }
+     weekDate() {
+        var d = new Date();
+        var daysName = [
+            "Sunday","Monday", "Tuesday" ,"Wednesday","Thursday" ,"Friday","Saturday"
+          ];
+      
+ 
+          return daysName[d.getDay()];
+     }
+
+    formatDate(date) {
+        var monthNames = [
+          "January", "February", "March",
+          "April", "May", "June", "July",
+          "August", "September", "October",
+          "November", "December"
+        ];
+      
+        var day = date.getDate();
+        var monthIndex = date.getMonth();
+        var year = date.getFullYear();
+      
+        return day + ' ' + monthNames[monthIndex] + ' ' + year;
+      }
     returnSlicedString(element, item) {
         var index = element.indexOf(item) + 1;
         return element.substring(index);

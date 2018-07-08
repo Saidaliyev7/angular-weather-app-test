@@ -26,10 +26,10 @@
     <div class="col-4">
       <div class="weather-options">
         <div class="date">
-          <p>Monday</p>
+          <p>{{weekDate()}}</p>
         </div>
         <div class="time">
-          <p>00/00/2018</p>
+          <p>{{ today }}</p>
         </div>
         <div class="wind">
           <p> Wind: {{returnWindSpeed(this.weather.currently.windSpeed)}}km/h</p>

@@ -15,6 +15,15 @@ export class LowerComponent implements OnInit {
     ngOnInit(): void {
         this.returnCurrentPosition()
      }
+     weekDate(i) {
+        var d = new Date();
+        var daysName = [
+            "Sunday","Monday", "Tuesday" ,"Wednesday","Thursday" ,"Friday","Saturday"
+          ];
+      
+ 
+          return daysName[d.getDay()+i];
+     }
      fromFaranheihtToCelcius(faranheit) {
         var celcius = (faranheit - 32) * 5 / 9;
         return Math.round(celcius);
