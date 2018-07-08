@@ -1,0 +1,105 @@
+export interface WeatherInterface {
+    latitude: number | string,
+    longitude: number | string,
+    timezone: string,
+    currently: {
+        time: number | string,
+        summary: string,
+        icon: string,
+        precipIntensity: number | string,
+        precipProbability: number | string,
+        precipType: string,
+        temperature: number | string,
+        apparentTemperature: number | string,
+        dewPoint: number | string,
+        humidity: number | string,
+        pressure: number | string,
+        windSpeed: number | string,
+        windGust: number | string,
+        windBearing: number | string,
+        cloudCover: number | string,
+        uvIndex: number | string,
+        visibility: number | string,
+        ozone: number | string
+    },
+    hourly: {
+        summary: string,
+        icon: string,
+        data: [
+            {
+                time: number | string,
+                summary: string,
+                icon: string,
+                precipIntensity: number | string,
+                precipProbability: number | string,
+                precipType: string,
+                temperature: number | string,
+                apparentTemperature: number | string,
+                dewPoint: number | string,
+                humidity: number | string,
+                pressure: number | string,
+                windSpeed: number | string,
+                windGust: number | string,
+                windBearing: number | string,
+                cloudCover: number | string,
+                uvIndex: number | string,
+                visibility: number | string,
+                ozone: number | string
+            }
+        ]
+    },
+    daily: {
+        summary: string,
+        icon: string,
+        data: [
+            {
+                time: number | string,
+                summary: string,
+                icon: string,
+                sunriseTime: number | string,
+                sunsetTime: number | string,
+                moonPhase: number | string,
+                precipIntensity: number | string,
+                precipIntensityMax: number | string,
+                precipIntensityMaxTime: number | string,
+                precipProbability: number | string,
+                precipType: string,
+                temperatureHigh: number | string,
+                temperatureHighTime: number | string,
+                temperatureLow: number | string,
+                temperatureLowTime: number | string,
+                apparentTemperatureHigh: number | string,
+                apparentTemperatureHighTime: number | string,
+                apparentTemperatureLow: number | string,
+                apparentTemperatureLowTime: number | string,
+                dewPoint: number | string,
+                humidity: number | string,
+                pressure: number | string,
+                windSpeed: number | string,
+                windGust: number | string,
+                windGustTime: number | string,
+                windBearing: number | string,
+                cloudCover: number | string,
+                uvIndex: number | string,
+                uvIndexTime: number | string,
+                visibility: number | string,
+                ozone: number | string,
+                temperatureMin: number | string,
+                temperatureMinTime: number | string,
+                temperatureMax: number | string,
+                temperatureMaxTime: number | string,
+                apparentTemperatureMin: number | string,
+                apparentTemperatureMinTime: number | string,
+                apparentTemperatureMax: number | string,
+                apparentTemperatureMaxTime: number | string
+            }
+
+        ]
+    },
+    flags: {
+        sources: Array<any>,
+        stations: Array<any>,
+        units: string
+    },
+    offset: number | string
+}

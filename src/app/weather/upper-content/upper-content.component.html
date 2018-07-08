@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="city">
+        <div class="city-name" (click)="returnCurrentPosition()">
+          <p>
+              {{returnSlicedString(this.weather.timezone,"/")}}</p>
+        </div>
+        <div class="city-temprature">
+            <p>
+                <i class="fas fa-arrow-down"></i>
+                {{ fromFaranheihtToCelcius(hourlyMinTemp(this.weather.hourly))}}
+                
+              </p>
+          <p>  <i class="fas fa-arrow-up"></i>
+            {{ fromFaranheihtToCelcius(hourlyMaxTemp(this.weather.hourly))}}
+          
+          </p>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <div class="weather-options">
+        <div class="date">
+          <p>Monday</p>
+        </div>
+        <div class="time">
+          <p>00/00/2018</p>
+        </div>
+        <div class="wind">
+          <p> Wind: {{returnWindSpeed(this.weather.currently.windSpeed)}}km/h</p>
+        </div>
+        <div class="moisture">
+          <p>Humidity:{{returnWindSpeed(this.weather.currently.humidity*100)}}%</p>
+        </div>
+        
+      </div>
+
+    </div>
+    <div class="col-4">
+      <div class="weather-icon">
+        <img src="./assets/{{this.weather.daily.data[0].icon}}.svg" alt="">
+        <div class="summary">
+          <p>{{this.weather.daily.data[0].summary}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="now-weather">
+          <p>
+              {{ fromFaranheihtToCelcius(this.weather.currently.apparentTemperature)}}
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
